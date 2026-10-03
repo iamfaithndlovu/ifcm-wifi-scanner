@@ -12,6 +12,8 @@ Edit `dist/quotes.js`. Each entry has `text` and an optional `reference`. Bible 
 
 Edit the opening heading and reveal wording in `dist/index.html`. The reveal delay is 800 milliseconds in `dist/app.js`. Colors and responsive layout live in `dist/styles.css`.
 
+Urbanist is served locally from `dist/fonts/Urbanist.ttf`; its SIL Open Font License is included in `dist/fonts/OFL.txt`. No Google Fonts service is contacted by visitors.
+
 ## Deploy
 
 This project is registered with ChatGPT Sites via `.openai/hosting.json`; publish this same Site when making changes. Its static output is the tracked `dist` directory. Alternatively upload only `dist` to a static host such as Netlify, Vercel, or Cloudflare Pages. No install or build command is required. Update `og:url` if moving to another domain.
