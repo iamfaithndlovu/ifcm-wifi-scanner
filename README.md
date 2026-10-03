@@ -1,25 +1,15 @@
 # A Little Encouragement
 
-A static church QR surprise. No dependencies, backend, forms, analytics, cookies, browser storage, or external assets. Hosting providers may keep normal infrastructure access logs; the application collects no visitor information.
+The live page displays only the supplied encouragement poster. The complete picture fits within the phone viewport without cropping. No JavaScript, forms, analytics, external fonts, or tracking are loaded.
 
 ## Run locally
 
-From this folder run `python -m http.server 4173 --directory dist`, then open http://localhost:4173. Any static HTTP server works. There is no build step.
+Run `python -m http.server 4173 --directory dist` and open http://localhost:4173.
 
-## Edit content
+## Change the picture
 
-Edit `dist/quotes.js`. Each entry has `text` and an optional `reference`. Bible excerpts use the public-domain KJV, with references and translation labels. Keep at least two entries for the random button. The first quote is random and consecutive quotes never repeat.
-
-Edit the opening heading and reveal wording in `dist/index.html`. The reveal delay is 800 milliseconds in `dist/app.js`. Colors and responsive layout live in `dist/styles.css`.
-
-Urbanist is served locally from `dist/fonts/Urbanist.ttf`; its SIL Open Font License is included in `dist/fonts/OFL.txt`. No Google Fonts service is contacted by visitors.
+Replace `dist/encouragement.jpeg`. Update the image dimensions and accessible alt text in `dist/index.html` if the replacement differs. The former quote files are retained as source assets but are not loaded by the page.
 
 ## Deploy
 
-This project is registered with ChatGPT Sites via `.openai/hosting.json`; publish this same Site when making changes. Its static output is the tracked `dist` directory. Alternatively upload only `dist` to a static host such as Netlify, Vercel, or Cloudflare Pages. No install or build command is required. Update `og:url` if moving to another domain.
-
-Keep the stable production URL when updating the site so printed QR codes continue to work. Regenerate the QR and sign only when the production URL changes. Never print a code for localhost or a temporary preview.
-
-## Accessibility and privacy
-
-Semantic HTML, a keyboard accessible button, polite quote announcements, visible focus, and reduced-motion support. All page assets load from the same origin. No network calls are made by application JavaScript. The page remains encouraging without JavaScript.
+Publish the same ChatGPT Site identified in `.openai/hosting.json`, serving the tracked `dist` directory. No build or dependencies are required. Keep the production URL unchanged so the existing printed QR codes continue to work.
